@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PEI's Fanmade Collection</title>
+
+  <!-- Google 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+  <!-- 頁首/導覽列 -->
+  <header>
+    <!-- 網站Logo/名稱 -->
+    <div class="logo">PEI' s Fanmade Collection</div>
+    <!-- 導覽連結：Home/Designs/About/Contact -->
+    <nav>
+      <a href="#">Home</a>
+      <!-- 點擊會平滑捲動到卡片區 -->
+      <a href="#cards">Designs</a>
+      <!-- 點擊會滾動到壓克力鑰匙圈的作品介紹區塊 -->
+      <a href="#acrylic">About</a>
+      <!-- 點擊會滾動到頁尾的聯絡區塊 -->
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 主要內容容器 -->
+  <main class="container">
+    <!-- Hero:主視覺與說明文字 -->
+    <section class="hero">
+      <!-- 左側:圖片容器 -->
+      <div class="hero-image">
+        <img src="hero.jpg" alt="hero" />
+      </div>
+      <!-- 右側:文字與按鈕 -->
+      <div class="hero-text">
+        <h1>Fanmade with heart</h1>
+        <div class="subtitle">Just For 831 — The Last Day of Summer</div>
+        <p><strong>Designs inspired by the rock band I love.</strong><br>每一個應援小物，都是因為喜歡而誕生。</p>
+        <!-- View Collection 會滾到卡片區 -->
+        <a class="btn" href="#cards">View Collection</a>
+      </div>
+    </section>
+
+    <!-- Cards:簡短展示作品 -->
+    <section id="cards" class="cards">
+      <!-- 第一張 -->
+      <article class="card">
+        <div class="small">2024</div>
+        <h3>壓克力鑰匙圈</h3>
+        <p>Fanmade / Acrylic Design<br>採用個人畫像與團員排列設計<br>呼應八三夭 LOGO 的三角造型</p>
+        <!-- 點擊滾動到對應作品詳情 (#acrylic) -->
+        <a class="card-btn" href="#acrylic">View Details</a>
+      </article>
+
+      <!-- 第二張 -->
+      <article class="card">
+        <div class="small">2024</div>
+        <h3>雙面橫式書籤</h3>
+        <p>Fanmade / Bookmark Design<br>參考年度調色盤搭配設計<br>傳遞陪伴的溫度</p>
+        <!-- 點擊滾動到對應作品詳情 (#bookmark) -->
+        <a class="card-btn" href="#bookmark">View Details</a>
+      </article>
+
+      <!-- 第三張(尚未開放) -->
+      <article class="card">
+        <div class="small">Coming soon...</div>
+        <h3>New Project</h3>
+        <p>Work in Progress<br>呼應全新巡迴主題的全新設計<br>敬請期待</p>
+        <!-- disabled類別表示按鈕目前不可用 -->
+        <a class="card-btn disabled" href="#" aria-disabled="true" tabindex="-1">Coming soon</a>
+      </article>
+    </section>
+
+    <!-- 作品詳情:壓克力鑰匙圈 -->
+    <section id="acrylic" class="section">
+      <!-- 文字左，圖片右（使用 .section 的預設格線） -->
+      <div>
+        <h2>2024 - 壓克力鑰匙圈</h2>
+        <p>以三角形作為設計基底，呼應八三夭的 LOGO 將五位團員與 LOGO 排進三角形中，代表五人雖然是不同的個體，但聚在一起就能組成一個完整的三角形，象徵樂團的凝聚與力量。</p>
+      </div>
+      <div class="section-image"><img src="壓克力吊飾.jpg" alt="acrylic" /></div>
+    </section>
+
+    <!-- 作品詳情:雙面橫式書籤 -->
+    <section id="bookmark" class="section">
+      <div>
+        <h2>2024 - 雙面橫式書籤</h2>
+        <p>以當年度官方周邊的粉藍配色作為書籤的底色，正面將五位成員一字排開，呈現完整的團體樣貌，下方搭配歌詞，讓文字與圖像結合，不僅展現成員間的連結，也傳遞歌曲所承載的情感與陪伴。</p>
+      </div>
+      <div class="section-image"><img src="書籤.jpg" alt="bookmark" /></div>
+    </section>
+
+  </main>
+
+  <!-- 頁尾：聯絡區與版權資訊 -->
+  <footer>
+    <!-- 聯絡區（Get in Touch）: id="contact"作為導覽錨點 -->
+    <div id="contact" class="contact">
+      <h3>Get in Touch</h3>
+      <p>要做比最瘋狂更瘋狂的藝術家</p>
+      <!-- mailto 會打開使用者的郵件客戶端 -->
+      <a class="contact-btn" href="mailto:peitzu0721@gmail.com">Contact Me</a>
+    </div>
+
+    <!-- 底部版權與社群資訊 -->
+    <div class="site-footer">
+      <div>© 2025 Pei-Tzu Chang. All rights reserved.</div>
+      <div>Instagram @peitzuuuu</div>
+    </div>
+  </footer>
+
+  <!-- 外部 JS 檔案：處理錨點平滑滾動與footer行為 -->
+  <script src="script.js"></script>
+</body>
+</html>

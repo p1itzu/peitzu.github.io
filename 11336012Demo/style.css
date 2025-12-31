@@ -1,0 +1,164 @@
+:root{
+  /*全域用到的顏色與陰影*/
+  --bg:#f6efe9;
+  --card:#ffffff;
+  --muted:#d9a99a;
+  --accent:#e6b7ac;
+  --dark:#222;
+  --shadow: 0 10px 30px rgba(20,20,20,0.08);
+  --glass-shadow: 0 8px 24px rgba(20,20,20,0.06);
+}
+
+/*基礎排版與行為*/
+*{box-sizing:border-box}
+html{scroll-behavior:smooth} /*平滑滾動*/ 
+html,body{height:100%;}
+
+body{
+  margin:0; font-family: 'Noto Sans TC','Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  background:var(--bg); color:var(--dark); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+
+/*首頁Header*/
+header{
+  /* 使用flex置中排版導覽項目 */
+  display:flex; justify-content:space-between; align-items:center; padding:26px 64px; background:transparent;
+  border-bottom:1px solid rgba(0,0,0,0.03);
+}
+
+/*Logo&主導覽*/
+.logo{font-weight:700; letter-spacing:1px}
+nav{display:flex; gap:28px; align-items:center}
+nav a{color:rgba(0,0,0,0.7); text-decoration:none; font-weight:500}
+
+/*內容容器最大寬度、內邊距*/
+.container{max-width:1150px; margin:48px auto; padding:0 24px}
+
+/*主視覺Hero*/
+/*CSS Grid:左圖右文*/
+.hero{display:grid; grid-template-columns: 1fr 520px; gap:48px; align-items:start;}
+.hero .hero-image{
+  /*圖片容器：白底+圓角+陰影*/
+  background:#fff; padding:20px; border-radius:18px; box-shadow:var(--shadow); display:flex; align-items:center; justify-content:center;
+}
+
+/*圖片與文字排版*/
+.hero img{width:100%; height:auto; border-radius:14px; display:block}
+.hero .hero-text{padding-top:50px; line-height:1.6; align-self:start}
+.hero h1{font-size:38px; margin:0 0 6px; font-weight:800}
+.hero .subtitle{color:rgba(0,0,0,0.6); font-size:14px; margin-bottom:12px}
+.hero p{margin:0 0 18px; color:rgba(0,0,0,0.65)}
+
+/*View Collection按鈕樣式*/
+.btn{
+  display:inline-block; background:var(--muted); color:#fff; padding:10px 22px; border-radius:20px; text-decoration:none; font-weight:600; cursor:pointer;
+  transition:background 0.2s ease, transform 0.12s ease;
+}
+.btn:hover{
+  /*與卡片按鈕相同的hover:顏色變深&微浮*/
+  background:#c88f86;
+  transform:translateY(-2px);
+}
+
+/*卡片Cards*/
+.cards{display:flex; gap:28px; margin-top:42px}
+
+.card{
+  /*單張卡片：白底+圓角+內距+輕微陰影*/
+  background:var(--card); padding:22px; border-radius:18px; box-shadow:var(--glass-shadow);
+  flex:1; transition:all 0.3s ease; cursor:pointer
+}
+
+.card:hover{
+  /*卡片懸浮效果 向上移+陰影*/
+  transform:translateY(-8px); box-shadow:0 20px 40px rgba(20,20,20,0.15)
+}
+
+.card h3{margin:8px 0 6px; font-size:18px}
+.card p{margin:0 0 14px; color:rgba(0,0,0,0.6); font-size:15px; line-height:1.9} /* 增加段落行高以提高可讀性 */
+.card .small{font-size:12px; color:rgba(0,0,0,0.5); margin-bottom:12px}
+
+/*卡片內按鈕*/
+.card .card-btn{
+  background:var(--muted); color:#fff; border:none; border-radius:999px;
+  padding:12px 24px; display:block; width:100%; box-sizing:border-box; text-align:center;
+  text-decoration:none; font-weight:600; transition:background 0.2s ease, transform 0.12s ease; cursor:pointer
+}
+
+.card .card-btn:hover{background:#c88f86; transform:translateY(-2px)}
+
+/*disabled狀態：不可點擊+淡色顯示*/
+.card .card-btn.disabled{
+  background:#efe9e6; color:rgba(0,0,0,0.45); cursor:not-allowed; pointer-events:none; opacity:0.95
+}
+
+/*作品詳細介紹*/
+/*Grid 文字與圖片並列*/
+.section{
+  display:grid; grid-template-columns: 1fr 420px; gap:36px; align-items:center; margin:64px 0
+}
+
+.section .section-image{
+  background:#fff; padding:18px; border-radius:16px; box-shadow:var(--shadow);
+}
+
+.section img{width:100%; height:auto; display:block; border-radius:10px}
+
+.section h2{font-size:20px; margin:0 0 12px}
+.section p{color:rgba(0,0,0,0.7); line-height:1.6}
+
+/*#acrylic、#bookmark的標題與段落字級設定 */
+#acrylic h2, #bookmark h2{
+  font-size:26px;
+  line-height:1.15;
+}
+#acrylic p, #bookmark p{
+  font-size:20px;
+  line-height:1.9;
+  color:rgba(0,0,0,0.78);
+}
+
+/*alternate: 反向排列（圖片左、文字右*/
+.section.alt{grid-template-columns:420px 1fr}
+
+/*Footer聯絡區塊*/
+footer{margin-top:72px}
+
+.contact{
+  background:var(--accent); color:#fff; padding:48px 24px; text-align:center;
+}
+
+.contact h3{margin:0 0 8px; font-size:22px}
+.contact p{margin:0 0 18px; opacity:0.95}
+
+.contact .contact-btn{
+  background:#fff; color:var(--accent); padding:10px 18px; border-radius:20px; text-decoration:none; font-weight:700
+}
+
+/*Footer按鈕的hover&過渡效果 */
+.contact .contact-btn{
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+.contact .contact-btn:hover{
+  background:#c88f86;
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+/*底部小字（版權、社群）*/
+.site-footer{
+  background:#231f20; color:#d6d6d6; padding:18px 24px; display:flex;
+  justify-content:space-between; align-items:center;
+}
+.site-footer { font-size:13px; }
+
+/*RWD*/
+@media (max-width:1100px){
+  /* 手機或較小裝置時，一欄顯示（圖片放上，文字放下） */
+  .hero{grid-template-columns:1fr}
+  .section, .section.alt{grid-template-columns:1fr}
+  .cards{flex-direction:column}
+  header{padding:18px}
+  .container{padding:0 18px}
+}
